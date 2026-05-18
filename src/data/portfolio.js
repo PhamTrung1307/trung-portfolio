@@ -8,7 +8,7 @@ export const profile = {
     "Tôi tập trung xây dựng backend với ASP.NET Core, RESTful API, SQL Server và Entity Framework Core. Mục tiêu của tôi là tham gia một đội ngũ sản phẩm chuyên nghiệp, viết code rõ ràng, có trách nhiệm và liên tục cải thiện năng lực qua các dự án thực tế.",
   about:
     "Tôi là lập trình viên .NET Backend định hướng Fresher/Junior, có kinh nghiệm thực hành với hệ thống quản lý hóa đơn, CMS, phân quyền người dùng, xử lý nghiệp vụ và tích hợp các công nghệ như JWT, Redis, SignalR, Hangfire và Docker. Tôi yêu thích cách tiếp cận Clean Architecture, API dễ bảo trì và quy trình làm việc có tổ chức.",
-  cvUrl: "",
+  cvUrl: "/PhamNguyenAnhTrung_CV.pdf",
   githubUrl: "https://github.com/PhamTrung1307",
   linkedInUrl: "https://www.linkedin.com/in/phamnguyenanhtrung",
   email: "phamnguyenanhtrung2003@gmail.com",
