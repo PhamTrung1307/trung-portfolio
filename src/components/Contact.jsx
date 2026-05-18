@@ -10,14 +10,14 @@ function Contact({ profile }) {
   ];
 
   return (
-    <div className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
-      <div className="contact-panel">
+    <div className="grid min-w-0 gap-6 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
+      <div className="contact-panel min-w-0 overflow-hidden">
         <p className="text-sm font-bold uppercase tracking-[0.2em] text-cyan-300">Sẵn sàng trao đổi</p>
         <h3 className="mt-4 text-3xl font-black text-white">Liên hệ với tôi</h3>
         <p className="mt-4 leading-8 text-slate-300">
           Tôi đang tìm kiếm cơ hội Fresher/Junior .NET Backend Developer tại môi trường chuyên nghiệp, có mentor và quy trình rõ ràng.
         </p>
-        <div className="mt-7 flex flex-col gap-3 sm:flex-row lg:flex-col">
+        <div className="mt-7 flex max-w-full flex-col flex-wrap gap-3 overflow-hidden sm:flex-row lg:flex-col">
           <a className="btn-primary" href={`mailto:${profile.email}`}>
             <Icon name="mail" />
             Gửi Email
@@ -28,15 +28,17 @@ function Contact({ profile }) {
           </a>
         </div>
       </div>
-      <div className="grid gap-4 md:grid-cols-2">
+      <div className="grid min-w-0 gap-4 md:grid-cols-2">
         {contacts.map(({ label, value, href, icon }) => (
-          <a key={label} className="contact-item" href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noreferrer">
+          <a key={label} className="contact-item min-w-0 max-w-full overflow-hidden" href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noreferrer">
             <span className="contact-icon">
               <Icon name={icon} size={20} />
             </span>
-            <span>
+            <span className="min-w-0 max-w-full overflow-hidden">
               <span className="block text-sm font-semibold text-slate-400">{label}</span>
-              <span className="mt-1 block break-words font-bold text-white">{value}</span>
+              <span className="mt-1 block max-w-full break-all font-bold leading-6 text-white sm:break-words">
+                {value}
+              </span>
             </span>
           </a>
         ))}
