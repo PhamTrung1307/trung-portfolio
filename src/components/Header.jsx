@@ -1,3 +1,5 @@
+import React from 'react'
+
 const navItems = [
   ["Giới thiệu", "#about"],
   ["Kỹ năng", "#skills"],

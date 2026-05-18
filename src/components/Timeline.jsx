@@ -1,3 +1,5 @@
+import React from 'react'
+
 function Timeline({ items }) {
   return (
     <div className="relative space-y-6 before:absolute before:left-4 before:top-2 before:h-[calc(100%-1rem)] before:w-px before:bg-slate-300">

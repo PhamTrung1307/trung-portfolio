@@ -1,3 +1,5 @@
+import React from 'react'
+
 function Section({ id, eyebrow, title, children }) {
   return (
     <section id={id} className="border-t border-slate-200 bg-mist py-20">

@@ -1,3 +1,5 @@
+import React from 'react'
+
 const paths = {
   download: "M12 3v10m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2",
   github:
