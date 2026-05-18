@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,56 +9,119 @@ html {
 
 body {
   margin: 0;
+  background: #020617;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+::selection {
+  background: rgba(103, 232, 249, 0.35);
+  color: #ffffff;
 }
 
 @layer components {
+  .bg-hero {
+    background:
+      radial-gradient(circle at 12% 12%, rgba(34, 211, 238, 0.22), transparent 34rem),
+      radial-gradient(circle at 88% 18%, rgba(59, 130, 246, 0.18), transparent 30rem),
+      linear-gradient(135deg, #020617 0%, #0f172a 52%, #111827 100%);
+  }
+
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 42px 42px;
+    mask-image: linear-gradient(to bottom, black 0%, transparent 78%);
+  }
+
   .btn-primary,
   .btn-secondary,
+  .btn-muted,
   .link-button {
-    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-bold transition;
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-extrabold transition duration-200;
   }
 
   .btn-primary {
-    @apply bg-ocean text-white shadow-soft hover:bg-teal-800;
+    @apply bg-cyan-300 text-slate-950 shadow-cyan hover:-translate-y-0.5 hover:bg-cyan-200;
   }
 
   .btn-secondary {
-    @apply border border-slate-300 bg-white text-ink hover:border-ocean hover:text-ocean;
+    @apply border border-white/15 bg-white/5 text-white hover:-translate-y-0.5 hover:border-cyan-300/60 hover:bg-cyan-300/10 hover:text-cyan-100;
+  }
+
+  .btn-muted {
+    @apply cursor-not-allowed border border-white/10 bg-white/5 text-slate-400;
+  }
+
+  .hero-panel,
+  .about-card,
+  .contact-panel,
+  .timeline-card,
+  .project-card {
+    @apply rounded-2xl border border-white/10 bg-white/[0.06] shadow-soft backdrop-blur;
   }
 
   .hero-panel {
-    @apply rounded-lg border border-slate-200 bg-white p-6 shadow-soft md:p-8;
+    @apply p-6 md:p-8;
+  }
+
+  .about-card {
+    @apply p-6 md:p-8;
   }
 
   .metric-box {
-    @apply rounded-lg border border-slate-200 bg-slate-50 p-4;
+    @apply rounded-xl border border-white/10 bg-slate-950/55 p-4;
   }
 
   .metric-box span {
-    @apply text-3xl font-extrabold text-steel;
+    @apply text-2xl font-black text-cyan-200;
   }
 
   .metric-box p {
-    @apply mt-1 text-sm font-semibold text-slate-600;
+    @apply mt-1 text-sm font-semibold leading-5 text-slate-400;
+  }
+
+  .info-pill {
+    @apply inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-bold text-slate-200;
   }
 
   .skill-chip {
-    @apply rounded-lg border border-slate-200 bg-white px-5 py-4 font-semibold text-slate-800 shadow-soft transition hover:border-ocean hover:text-ocean;
+    @apply rounded-xl border border-white/10 bg-white/[0.06] px-5 py-4 font-bold text-slate-100 shadow-soft transition duration-200 hover:-translate-y-0.5 hover:border-cyan-300/60 hover:bg-cyan-300/10 hover:text-cyan-100;
   }
 
   .project-card {
-    @apply flex h-full flex-col justify-between rounded-lg border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-1 hover:border-ocean;
+    @apply flex h-full flex-col justify-between p-6 transition duration-200 hover:-translate-y-1 hover:border-cyan-300/50 hover:bg-white/[0.08];
+  }
+
+  .project-number {
+    @apply text-sm font-black uppercase tracking-[0.22em] text-cyan-300;
+  }
+
+  .tech-badge {
+    @apply rounded-full border border-white/10 bg-slate-950/70 px-3 py-1 text-xs font-bold text-slate-300;
   }
 
   .link-button {
-    @apply border border-slate-300 bg-white text-slate-700 hover:border-steel hover:text-steel;
+    @apply border border-white/15 bg-white/5 text-slate-100 hover:border-cyan-300/60 hover:bg-cyan-300/10 hover:text-cyan-100;
+  }
+
+  .status-chip {
+    @apply inline-flex min-h-11 items-center justify-center rounded-lg border border-white/10 bg-slate-950/70 px-4 py-3 text-sm font-bold text-slate-400;
+  }
+
+  .timeline-card {
+    @apply p-6 transition duration-200 hover:border-cyan-300/50 hover:bg-white/[0.08];
+  }
+
+  .contact-panel {
+    @apply p-6 md:p-8;
   }
 
   .contact-item {
-    @apply flex items-center gap-4 rounded-lg border border-slate-200 bg-white p-5 shadow-soft transition hover:border-ocean;
+    @apply flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.06] p-5 shadow-soft transition duration-200 hover:-translate-y-0.5 hover:border-cyan-300/50 hover:bg-white/[0.08];
   }
 
   .contact-icon {
-    @apply flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-teal-50 text-ocean;
+    @apply flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-cyan-300/10 text-cyan-200;
   }
 }

@@ -7,36 +7,38 @@ import Projects from "./components/Projects.jsx";
 import Timeline from "./components/Timeline.jsx";
 import Contact from "./components/Contact.jsx";
 import Footer from "./components/Footer.jsx";
-import { profile, projects, techStack, timeline } from "./data/portfolio.js";
+import { highlights, profile, projects, techStack, timeline } from "./data/portfolio.js";
 
 function App() {
   return (
-    <div className="min-h-screen bg-mist text-ink">
+    <div className="min-h-screen bg-slate-950 text-slate-100">
       <Header />
       <main>
-        <Hero profile={profile} />
+        <Hero profile={profile} highlights={highlights} />
         <Section id="about" eyebrow="Giới thiệu" title="About Me">
-          <p className="max-w-3xl text-base leading-8 text-slate-700 md:text-lg">
-            Tôi là lập trình viên .NET đang tìm kiếm cơ hội Fresher/Junior để
-            phát triển trong môi trường chuyên nghiệp. Tôi yêu thích việc xây
-            dựng backend rõ ràng, thiết kế REST API ổn định, làm việc với cơ sở
-            dữ liệu và liên tục cải thiện chất lượng code qua từng project.
-          </p>
+          <div className="about-card">
+            <p className="text-base leading-8 text-slate-300 md:text-lg">{profile.about}</p>
+            <div className="mt-7 flex flex-wrap gap-3">
+              <span className="info-pill">{profile.target}</span>
+              <span className="info-pill">{profile.location}</span>
+              <span className="info-pill">Clean Architecture</span>
+            </div>
+          </div>
         </Section>
         <Section id="skills" eyebrow="Kỹ năng" title="Tech Stack">
           <TechStack items={techStack} />
         </Section>
-        <Section id="projects" eyebrow="Sản phẩm mẫu" title="Projects">
+        <Section id="projects" eyebrow="Dự án thực tế" title="Projects">
           <Projects projects={projects} />
         </Section>
-        <Section id="experience" eyebrow="Hành trình" title="Education / Experience">
+        <Section id="experience" eyebrow="Kinh nghiệm" title="Experience">
           <Timeline items={timeline} />
         </Section>
         <Section id="contact" eyebrow="Kết nối" title="Contact">
           <Contact profile={profile} />
         </Section>
       </main>
-      <Footer />
+      <Footer profile={profile} />
     </div>
   );
 }

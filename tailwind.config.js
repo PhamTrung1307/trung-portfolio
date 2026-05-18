@@ -13,7 +13,8 @@ export default {
         mist: "#f8fafc"
       },
       boxShadow: {
-        soft: "0 16px 45px rgba(15, 23, 42, 0.08)"
+        soft: "0 20px 70px rgba(0, 0, 0, 0.28)",
+        cyan: "0 16px 45px rgba(34, 211, 238, 0.18)"
       }
     }
   },
